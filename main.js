@@ -1,20 +1,19 @@
 const app = new Vue({
     el: '#app',
     data:{
-        email: [
-
-        ]
+        email: "",
     },
     mounted: function() {
         axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-        .then(function (risposta) {
+        .then((risposta) => {
         // handle success
-        console.log(risposta.data.response);
+        this.email = risposta.data.response;
+        console.log(this.email)
     })
         .catch(function (error) {
         // handle error
         console.log(error);
-  })
+    })
 
     },
 })
