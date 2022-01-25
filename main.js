@@ -1,13 +1,18 @@
 const app = new Vue({
     el: '#app',
     data:{
-        email: "",
+        email: [
+
+        ]
+        
     },
-    mounted: function() {
+    mounted() {
+        for (let i = 0; i < 10; i++){
         axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
         .then((risposta) => {
         // handle success
-        this.email = risposta.data.response;
+        this.email.push(risposta.data.response);
+
         console.log(this.email)
     })
         .catch(function (error) {
@@ -15,5 +20,7 @@ const app = new Vue({
         console.log(error);
     })
 
-    },
+    }},
+
 })
+

@@ -11,8 +11,8 @@
 </head>
 <body>
     <div id="app">
-        <div>
-            {{email}}
+        <div v-for="(item, index) in email">
+            {{email[index]}}
         </div>
     </div>
 
