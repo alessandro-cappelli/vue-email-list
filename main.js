@@ -7,9 +7,9 @@ const app = new Vue({
     },
     mounted: function() {
         axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-        .then(function (response) {
+        .then(function (risposta) {
         // handle success
-        console.log(response);
+        console.log(risposta.data.response);
     })
         .catch(function (error) {
         // handle error
